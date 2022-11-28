@@ -1,0 +1,133 @@
+:root {
+	font-size: 10px;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	display: flex;
+	flex: 1;
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-size: 1rem;
+	justify-content: center;
+	background-color: rgb(255, 245, 233);
+}
+
+hr{
+	background-color: firebrick;
+	height: .1rem;
+	width: 100%;
+	border: none;
+	margin: 1rem 0 1rem;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+
+	&[contentEditable] {
+		border-radius: 1rem;
+		background-color: ivory;
+
+		&:focus{
+			outline: none;
+			background-color: bisque;
+		}
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+quote {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1 {
+	font-size: 3rem;
+	font-family: 'AdornS Serif', Times, serif;
+	text-transform: capitalize;
+	margin-bottom: .5rem;
+}
+
+.subtitle {
+	font-size: 1.75rem;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+.content {
+	font-size: 1.75rem;
+	line-height: 1;
+	font-family: 'Times New Roman', Times, serif !important;
+	
+	&.quote{
+		font-size: 1.75rem;
+		min-height: calc( 5 * 2rem);
+		line-height: 2;
+		flex: 1;
+
+		*{
+			font-family: 'Times New Roman', Times, serif !important;
+			font-size: 1.75rem !important;
+			line-height: 2 !important;
+			background-color: transparent !important;
+		}
+	}
+}
+
+@media print {
+	@page {
+		size: 55mm auto;
+	}
+
+	:root {
+		font-size: 1mm;
+	}
+
+	html,
+	body {
+		justify-content: start;
+		align-items: flex-start;
+	}
+
+	* {
+		&[contentEditable] {
+			background-color: transparent;
+		}
+	}
+}
+
+.menu{
+	display: flex;
+	flex-direction: column;
+	font-size: 18px;
+	flex: 1;
+	width: 100%;
+	gap: 8px;
+
+	a{
+		display: block;
+		width: 100%;
+		background-color: white;
+		padding: 12px 48px;
+		border-radius: 100px;
+
+		&:hover{
+			background-color: dodgerblue;
+		}
+	}
+}
