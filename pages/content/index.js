@@ -1,12 +1,28 @@
-import Card from '/components/cards'
+import { useState } from "react"
 
 export default function Home() {
-	return (
-		<Card>
-			<h1 contentEditable suppressContentEditableWarning={true}>Título da nota</h1>
-			<p contentEditable suppressContentEditableWarning={true} className="subtitle">Subtítulo da nota</p>
-			<hr />
-			<p className="content quote" suppressContentEditableWarning={true} contentEditable></p>
-		</Card>
+	const [ data , setData ] = useState({})
+
+	return (		
+		<>
+			<table width="100%">
+				<tbody>
+					<tr>
+						<td>
+							<h1 contentEditable dangerouslySetInnerHTML={{  __html: data.title || 'Título' }}></h1>
+							<p>
+								<em contentEditable dangerouslySetInnerHTML={{  __html: data.subtitle || 'subtítulo' }}></em>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<hr />
+							<div contentEditable dangerouslySetInnerHTML={{  __html: data.content || 'Seu texto aqui' }}></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</>
 	)
 }
